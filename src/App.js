@@ -1,4 +1,4 @@
-
+import './assets/scss/base.scss'
 
 function App() {
   return (
