@@ -7,7 +7,7 @@ import Home from '../assets/icons/home.png'
 import Projects from '../assets/icons/projects.png'
 import Skills from '../assets/icons/skills.png'
 
-const Navbar = () => {
+const SideNav = () => {
   return (
     <div className="navbar">
       <ul>
@@ -47,4 +47,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default SideNav
