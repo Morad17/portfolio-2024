@@ -1,5 +1,5 @@
 *{
-    // box-sizing: border-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -15,17 +15,21 @@
 
 
 ///App ///
-
 .main-layout{
+    display: flex;
+    flex-direction: row;
+}
+.content{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 }
 
 ///Home ///
 .home{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: $gray;
+    border: 5px solid $gold;
     .hero-title-row{
         margin-top: 10vh;
         align-items: center;
@@ -36,7 +40,7 @@
     .hero-name{
         font-size: 7em;
         margin: 0 10px 0;
-        color: #fafafa;
+        color: $turquoise;
     }
     .hero-name:hover{
       color: #dbb852;
@@ -67,8 +71,10 @@
         //   cursor: pointer;
         // }
     }
-    .sIcon:hover{
-        color: $gold;
+    .basic-button:hover{
+        background-color: #dbb852;
+        color: $turquoise;
+        border-color: $turquoise;
     }
     .contact-button{
         margin-top: 10px;
@@ -113,4 +119,39 @@
     }
 }
 
-/// 
+/// About Section ///
+
+.about-section{
+    height: 100vh;
+    border: 5px solid $gold;
+    background-color: $gray;
+    color: white;
+    .profile-image{
+        width: 300px;
+    }
+    .tech-logo{
+        width: 96px;
+        padding: 5px;
+        border: 2px solid gold;
+        margin:10px ;
+    }
+    .about-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .about-title{
+        font-size: 5em;
+        text-align: center;
+        padding: 20px;
+        color: $turquoise;
+    }
+    .about-text{
+        width: 40%;
+        font-size: 20px;
+    }
+    .tech-row{
+        display: flex;
+        justify-content: center;
+    }
+}

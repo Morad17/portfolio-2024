@@ -16,7 +16,7 @@ function App() {
     return (
     <div className="main-layout">
       <SideNav />
-      <Outlet />
+      <Outlet/>
     </div>)
   }
 
@@ -26,7 +26,14 @@ function App() {
       element:<Layout />,
       children: [{
         path: "/",
-        element: <Home />
+        element: 
+        <div className="content">
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        </div>
       },
       {
         path: "/about",
