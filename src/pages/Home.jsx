@@ -27,9 +27,6 @@ const Home = () => {
             <a href="#contact-section" className="basic-button">Get In Touch</a>
         </div>
       </div>
-      <div className="scroll-down">
-          <a href="#about-section" >Scroll Down <span> &#8595;</span></a>
-      </div>
     </div>
   )
 }

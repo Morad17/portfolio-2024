@@ -9,8 +9,8 @@ import Skills from '../assets/icons/skills.png'
 
 const SideNav = () => {
   return (
-    <div className="navbar">
-      <ul>
+    <div className="sidenav">
+      <ul className="navigation">
         <li>
           <Link to="/" className="nav-link">
             <img src={Home} alt="" />

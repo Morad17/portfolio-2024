@@ -1,3 +1,5 @@
+@import "./animation.scss";
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +14,21 @@
     $turquoise: #024251;
     $gold: #dbb852;
     $gray: #96938f;
+
+::-webkit-scrollbar{
+    width: 10px;
+    background: gold;
+    color: $gray;
+}
+
+::-webkit-scrollbar-track {
+    width: 10px;
+    background: $gray;
+}
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: $turquoise;
+}
 
 
 ///App ///
@@ -30,6 +47,7 @@
     width: 100%;
     background-color: $gray;
     border: 5px solid $gold;
+    border-right: none;
     .hero-title-row{
         margin-top: 10vh;
         align-items: center;
@@ -93,13 +111,17 @@
 
 /// Nav ///
 
-.navbar{
+.sidenav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 10vw;
+    // width: 10vw;
     height: 100vh;
     padding: 0 15px;
+    position: fixed;
+    .navigation{
+        
+    }
     ul li{
         list-style: none;
     }
@@ -109,8 +131,8 @@
             color: black;
             text-decoration: none;
             img{
-                padding: 5px 0;
-                width: 48px;
+                padding: 8px 0;
+                width: 40px;
             }
             p{
                 font-size: 30px;
@@ -126,28 +148,32 @@
     border: 5px solid $gold;
     background-color: $gray;
     color: white;
+    padding: 10vh 20vw;
     .profile-image{
         width: 300px;
+        border-radius: 50%;
+        border: 5px solid $gold;
     }
     .tech-logo{
         width: 96px;
         padding: 5px;
-        border: 2px solid gold;
+        border: 2px solid $gold;
         margin:10px ;
     }
     .about-row{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+    }
+    .section-1,.section-2{
+        display: inline;
     }
     .about-title{
         font-size: 5em;
-        text-align: center;
         padding: 20px;
         color: $turquoise;
+        margin: 0;
     }
     .about-text{
-        width: 40%;
         font-size: 20px;
     }
     .tech-row{
