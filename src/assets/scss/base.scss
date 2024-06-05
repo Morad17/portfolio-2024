@@ -181,3 +181,91 @@
         justify-content: center;
     }
 }
+
+///Skills Section ///
+
+.skills-section{
+    width: 100vw;
+    height: 100vh;
+    padding: 5vh 20vw;
+    display: flex;
+    background-color: $gray;
+    .skills-content,.experience-content{
+        width: 50%;
+    }
+    .skills-title{
+        font-size: 5em;
+    }
+    .skills-text{
+        margin-top: 4vh;
+        line-height: 1.7;
+        font-size: 18px;
+    }
+    .skills-bar{
+
+        
+        // Target Progress Bar //
+        progress {
+            border: none;
+            background: #2f2f2f;
+            border-radius: 15px;
+            height: 10px;
+            width: 100%;
+        }
+        // Cross compatibility //
+        progress::-moz-progress-bar {
+            background: $gold;
+            border-radius: 10px;
+        }
+        
+        progress::-webkit-progress-value {
+            background-color: $gold;
+            border-radius: 10px;
+        }
+        
+        progress::-webkit-progress-bar {
+            background: #2f2f2f;
+            border-radius: 10px;
+        }
+    }
+    .progress-group{
+            padding: 10px 0;
+            p{
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+    .experience-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    .e-card{
+        border-radius: 5px;
+        width: 15vw;
+        padding: 10px;
+        background: #2f2f2f;
+        color: white;
+        margin-bottom: 5vh;
+        text-align: center;
+        .e-title{
+            font-size: 20px;
+        }
+        p{
+            padding-top:8px
+        }
+    }
+}
+
+///Projects ///
+
+.projects{
+    width: 100vw;
+    height: 100vh;
+    background-color: $gray;
+    .projects-title{
+        font-size: 6em;
+        text-align: center;
+    }
+}
