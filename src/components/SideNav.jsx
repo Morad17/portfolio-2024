@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { a } from 'react-router-dom'
 
 import About from '../assets/icons/about.png'
 import Contact from '../assets/icons/contact.png'
@@ -12,35 +12,35 @@ const SideNav = () => {
     <div className="sidenav">
       <ul className="navigation">
         <li>
-          <Link to="/" className="nav-link">
+          <a href="" className="nav-a">
             <img src={Home} alt="" />
             <p>Home</p>
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="/" className="nav-link">
+          <a href="/about" className="nav-a">
             <img src={About} alt="" />
             <p>About</p>
-          </Link>
+          </a>
         </li>
         <li>
-        <Link to="/" className="nav-link">
+        <a href="/" className="nav-a">
             <img src={Projects} alt="" />
             <p>Projects</p>
-          </Link>
+          </a>
 
         </li>
         <li>
-          <Link to="/" className="nav-link">
+          <a href="/" className="nav-a">
             <img src={Skills} alt="" />
             <p>Skills</p>
-          </Link>
+          </a>
         </li>
         <li>
-          <Link to="/" className="nav-link">
+          <a href="/" className="nav-a">
             <img src={Contact} alt="" />
             <p>Contact</p>
-          </Link>
+          </a>
         </li>
       </ul>
     </div>
