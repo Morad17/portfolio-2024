@@ -4,8 +4,11 @@ import holidayPhotoThumb from "../assets/images/holiday-photo-thumb.png"
 
 const Projects = () => {
   return (
-    <div className="projects-section" id="projects">      
-      <section className="project-section">
+    <div className="projects-section" id="projects"> 
+      <section className="info-section-left">
+        
+      </section>     
+      <section className="project-content">
       <h1 className="projects-title">
         Projects
       </h1>
@@ -40,6 +43,9 @@ const Projects = () => {
           </div>
         </div>
         
+      </section>
+      <section className="info-section-right">
+
       </section>
     </div>
   )
