@@ -10,7 +10,7 @@ import mysql from "../assets/icons/mysql.png"
 
 const About = () => {
   return (
-    <div className="about-section">
+    <div className="about-section" id="about">
       
       <div className="about-row">
         <div className="section-1">

@@ -3,7 +3,7 @@ import ProgressBar from "../components/ProgressBar"
 
 const Skills = () => {
   return (
-    <div className="skills-section">
+    <div className="skills-section" id="skills">
       
       <section className="skills-content">
       <h1 className="skills-title">Skills & Experience</h1>

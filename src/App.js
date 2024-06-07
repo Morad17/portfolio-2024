@@ -12,9 +12,9 @@ import Contact from './pages/Contact'
 function App() {
 
   return (
-    <div className="App">
+    <div className="App main-layout">
       <SideNav />
-     <div className="main-layout">
+     <div className="content">
       <Home />
         <About />
         <Skills />

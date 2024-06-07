@@ -4,7 +4,7 @@ import holidayPhotoThumb from "../assets/images/holiday-photo-thumb.png"
 
 const Projects = () => {
   return (
-    <div className="projects-section">      
+    <div className="projects-section" id="projects">      
       <section className="project-section">
       <h1 className="projects-title">
         Projects

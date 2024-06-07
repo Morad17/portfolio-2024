@@ -12,32 +12,32 @@ const SideNav = () => {
     <div className="sidenav">
       <ul className="navigation">
         <li>
-          <a href="" className="nav-a">
+          <a href="#home" className="nav-link">
             <img src={Home} alt="" />
             <p>Home</p>
           </a>
         </li>
         <li>
-          <a href="/about" className="nav-a">
+          <a href="#about" className="nav-link">
             <img src={About} alt="" />
             <p>About</p>
           </a>
         </li>
         <li>
-        <a href="/" className="nav-a">
+        <a href="#projects" className="nav-link">
             <img src={Projects} alt="" />
             <p>Projects</p>
           </a>
 
         </li>
         <li>
-          <a href="/" className="nav-a">
+          <a href="#skills" className="nav-link">
             <img src={Skills} alt="" />
             <p>Skills</p>
           </a>
         </li>
         <li>
-          <a href="/" className="nav-a">
+          <a href="#contact" className="nav-link">
             <img src={Contact} alt="" />
             <p>Contact</p>
           </a>

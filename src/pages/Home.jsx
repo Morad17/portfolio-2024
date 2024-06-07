@@ -6,7 +6,7 @@ import linkedin from "../assets/icons/linkedin.png"
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <div className="hero-title-row">
         <h1 className="hero-name">Morad</h1>
         <h1 className="hero-name">El Bouchikhi</h1>
