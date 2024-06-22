@@ -39,6 +39,7 @@ body{
 .main-layout{
     display: flex;
     flex-direction: row;
+    background-color: $gray;
 }
 .content{
         display: flex;
@@ -120,9 +121,9 @@ body{
 
 .sidenav{
     display: flex;
-    width: 15vw;
     height: 100%;
-    padding: 0 15px;
+    padding: 0 2vw;
+    background-color: $gray;
     .navigation{
         display: flex;
         flex-direction: column;
@@ -279,7 +280,7 @@ body{
         // border: 2px solid $turquoise;
        display: flex;
        justify-content: space-evenly;
-    flex-direction: row;
+        flex-direction: row;
     }
     .main-content section{
         flex: 1;
@@ -299,9 +300,9 @@ body{
         text-align: center;
         margin-bottom: 2vh;
     }
-    .project-text{
-        border: 2px solid $gold;
-    }
+    // .project-text{
+    //     border: 2px solid $gold;
+    // }
     .project-1,.project-2{
         width: 49%;
     }
@@ -311,5 +312,31 @@ body{
     .project-image{
         width: 100%;
         height: auto;;
+    }
+    //Project Cards //
+    .project-card-1,.project-card-2{
+        position: relative;
+        .project-title{
+            font-size: 1.5em;
+            margin: 0 auto;
+        }
+        .project-tech{
+            
+        }
+        .project-image{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .project-card-1{
+        width: 49%;
+        position: relative;
+    }
+    .project-text{
+        position: absolute;
+        display: flex;
+    }
+    .project-card-2{
+        width: 100%;
     }
 }
