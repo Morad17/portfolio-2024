@@ -44,6 +44,7 @@ body{
 .content{
         display: flex;
         flex-direction: column;
+        max-width: 95vw;
 }
 .home, .about-section, .skills-section,.projects-section{
     border: 5px solid $gold;
@@ -122,8 +123,9 @@ body{
 .sidenav{
     display: flex;
     height: 100%;
-    padding: 0 2vw;
     background-color: $gray;
+    width: 5vw;
+    justify-content: center;
     .navigation{
         display: flex;
         flex-direction: column;
