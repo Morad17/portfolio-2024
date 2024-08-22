@@ -13,7 +13,7 @@ const Projects = () => {
         Projects
       </h1>
       <div className="main-content">
-        <section className="info-section-left">
+        {/* <section className="info-section-left">
           <div className="project-slides">
            {
             data.map((data,key)=> {
@@ -25,7 +25,7 @@ const Projects = () => {
             })
            }
           </div>
-        </section>     
+        </section>      */}
         <section className="project-content">
           <div className="project-slides">
             <div className="project-1">
@@ -57,11 +57,9 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          
         </section>
-        <section className="info-section-right">
-
-        </section>
+        {/* <section className="info-section-right">
+        </section> */}
       </div>
     </div>
   )

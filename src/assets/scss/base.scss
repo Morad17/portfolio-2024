@@ -281,16 +281,18 @@ body{
     .main-content{
         // border: 2px solid $turquoise;
        display: flex;
-       justify-content: space-evenly;
-        flex-direction: row;
+       justify-content: center;
+        .info-section-left{
+            display: none;
+        }
     }
-    .main-content section{
-        flex: 1;
+    // .main-content section{
+    //     flex: 1;
 
-    }
+    // }
     .project-slides{
         //  background-color: $turquoise;
-         width: 100%;
+         width: 40vw;
          display: flex;
          flex-wrap: wrap;
          justify-content: space-between;
