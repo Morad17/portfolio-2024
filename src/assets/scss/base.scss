@@ -306,24 +306,46 @@ body{
         margin-bottom: 2vh;
         margin-top: 5vh;
     }
-    // .project-text{
-    //     border: 2px solid $gold;
-    // }
     .project-1,.project-2{
-        width: 49%;
+        position: relative;
         display: flex;
-        border-radius: 5px;
     }
     .project-1{
         width: 100%;
+        .project-text{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            padding: 1em;
+            justify-content: space-around;
+            font-size: 1.2rem;
+            background-color: white;
+        }
+    }
+    .project-2{
+        width: 49%;
+        .project-text{
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            padding: .5em;
+            justify-content: space-around;
+            background-color: white;
+        }
     }
     .project-image{
         width: 100%;
         height: auto;;
     }
     //Project Cards //
-    .project-card-1,.project-card-2{
-        position: relative;
+        .card-overlay{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
         .project-title{
             font-size: 1.5em;
             margin: 0 auto;
@@ -331,15 +353,11 @@ body{
         .project-image{
             width: 100%;
             height: auto;
+            border-radius:10px ;
         }
-    }
     .project-card-1{
         width: 49%; 
         position: relative;
-    }
-    .project-text{
-        position: absolute;
-        display: flex;
     }
     .project-card-2{
         width: 100%;

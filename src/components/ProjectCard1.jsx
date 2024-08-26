@@ -4,10 +4,13 @@ const ProjectCard1 = ({data:{title, techs,image}}) => {
   return (
     <div className="project-card-1" >
         <img src={image} alt="" className="project-image"/>
-        <div className="project-text">
+        <div className="card-overlay">
+          <div className="project-text">
             <h3 className="project-title">{title}</h3>
             <p className="project-tech">{techs}</p>
         </div>
+        </div>
+        
     </div>
   )
 }
