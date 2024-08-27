@@ -278,88 +278,67 @@ body{
     background-color: $gray;
     display: flex;
     flex-direction: column;
-    .main-content{
-        // border: 2px solid $turquoise;
-       display: flex;
-       justify-content: center;
-        .info-section-left{
-            display: none;
-        }
-    }
-    // .main-content section{
-    //     flex: 1;
 
-    // }
-    .project-slides{
-        //  background-color: $turquoise;
-         width: 40vw;
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: space-between;
-         row-gap: .5vw;
-         text-align: center;
-         margin-bottom: 10px;
-    }
     .projects-title{
         font-size: 5em;
         text-align: center;
         margin-bottom: 2vh;
         margin-top: 5vh;
     }
-    .project-1,.project-2{
+    .main-content{
+       display: flex;
+       justify-content: center;
+        .info-section-left{
+            display: none;
+        }
+    }
+    .project-slides{
+         width: 23vw;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         row-gap: 1vw;
+         text-align: center;
+         margin-bottom: 10px;
+    }
+    .project-card{
         position: relative;
         display: flex;
-    }
-    .project-1{
         width: 100%;
-        .project-text{
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 2em;
-            padding: 1em;
-            justify-content: space-around;
-            font-size: 1.2rem;
-            background-color: white;
-        }
+        
     }
-    .project-2{
-        width: 49%;
-        .project-text{
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 2em;
-            padding: .5em;
-            justify-content: space-around;
-            background-color: white;
-        }
+    .card-overlay{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .project-text{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 1em;
+        justify-content: space-around;
+        font-size: 1rem;
+        background-color: white;
+        border-radius: 10px;
     }
     .project-image{
         width: 100%;
-        height: auto;;
+        height: auto;
+        border-radius: 10px;
+        border: 2px solid white;
     }
-    //Project Cards //
-        .card-overlay{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+    
+    .animated-content{
+        display: none;
+        row-gap: 2vw;
+        .content-left{
+            width: 23vw;
         }
-        .project-title{
-            font-size: 1.5em;
-            margin: 0 auto;
+        .content-right{
+            width: 23vw;
         }
-        .project-image{
-            width: 100%;
-            height: auto;
-            border-radius:10px ;
-        }
-    .project-card-1{
-        width: 49%; 
-        position: relative;
-    }
-    .project-card-2{
-        width: 100%;
     }
 }
