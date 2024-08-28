@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useAnimate } from 'framer-motion'
+import { easeIn, useAnimate } from 'framer-motion'
 
 import ProjectCard1 from '../components/ProjectCard1'
 import ProjectCard2 from '../components/ProjectCard2'
@@ -18,8 +18,9 @@ const Projects = () => {
   const [scope, animate ] = useAnimate()
 
   const handleAnimate = async (id) => {
-   await animate("#project-content", {x: "30vw"}, {duration: 1})
-   await animate("#animated-content", {display: "flex"},)
+  //  await animate("#project-content", {x: "30vw"}, {duration: 1})
+   await animate("#animated-content", {"margin-left":0},{duration: 1}, )
+   await animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
   }
   
 
@@ -32,7 +33,7 @@ const Projects = () => {
         <section id="animated-content" className="animated-content">
           <div className="content-left">
             <div className="animated-card">
-              <img src={travelThumb} alt="" />
+              <img className="animated-image" src={travelThumb} alt="" />
             </div>
 
           </div>
