@@ -31,15 +31,22 @@ const Projects = () => {
       </h1>
       <div className="main-content">
         <section id="animated-content" className="animated-content">
-          <div className="content-left">
+          <div className="animated-content-title">
+              <h1>Travel Maps App</h1>
+          </div>
+          <div className="animated-project-content">
+            <div className="content-left">
+
             <div className="animated-card">
               <img className="animated-image" src={travelThumb} alt="" />
             </div>
 
-          </div>
-          <div className="content-right">
+            </div>
+            <div className="content-right">
 
+            </div>
           </div>
+          
         </section>
         <section id="project-content" className="project-content">
           <div className="project-slides">

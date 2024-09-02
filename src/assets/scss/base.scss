@@ -332,10 +332,18 @@ body{
     
     .animated-content{
         opacity: 0;
-        row-gap: 2vw;
-        gap: 4vh;
-        display: flex;
         margin-left: -50vw;
+        .animated-content-title{
+            width: 100%;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 5vh;
+        }
+        .animated-project-content{
+            row-gap: 2vw;
+            gap: 4vh;
+            display: flex;
+        }
         .content-left{
             width: 23vw;
         }
