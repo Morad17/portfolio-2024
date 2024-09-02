@@ -6,7 +6,6 @@
     padding: 0;
 }
 body{
-    
     overflow-x: hidden;
 }
 
@@ -53,7 +52,7 @@ body{
 ///Home ///
 .home{
     min-height: 100vh;
-    width: 100vw;
+    width: 95vw;
     background-color: $gray;
     border: 5px solid $gold;
     border-right: none;
@@ -156,7 +155,7 @@ body{
 
 .about-section{
     min-height: 100vh;
-    width: 100vw;
+    width: 95vw;
     border: 5px solid $gold;
     background-color: $gray;
     color: white;
@@ -197,7 +196,7 @@ body{
 ///Skills Section ///
 
 .skills-section{
-    width: 100vw;
+    width: 95vw;
     min-height: 100vh;
     padding: 5vh 20vw;
     display: flex;
@@ -273,7 +272,7 @@ body{
 ///Projects ///
 
 .projects-section{
-    width: 100vw;
+    width: 95vw;
     min-height: 100vh;
     background-color: $gray;
     display: flex;
