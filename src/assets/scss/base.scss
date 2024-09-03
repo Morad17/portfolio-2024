@@ -17,7 +17,8 @@ body{
     $turquoise: #024251;
     $gold: #dbb852;
     $gray: #96938f;
-
+    $silver: #d5d5d7;
+    $darkFont: #49433d;
 ::-webkit-scrollbar{
     width: 10px;
     background: gold;
@@ -334,43 +335,125 @@ body{
     .animated-content{
         opacity: 0;
         margin-left: -50vw;
-        .animated-content-title{
-            width: 100%;
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 5vh;
-        }
+        color: $darkFont;
         .animated-project-content{
             row-gap: 2vw;
             gap: 1vh;
             display: flex;
             flex-direction: column;
         }
-        // Top Layout //
-        .content-layout-top{
+        //Card Layouts //
+
+        //Top Layout //
+        .content-layout-top-row{
+            display: flex;
+            gap: .5vw;
+            width: 68vw;
+        }
+        .content-top-left{
+            width: 50%;
+            font-size: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: $silver;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            .about-box{
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+        }
+        .content-top-right{
+            width: 63%;
+            font-size: 3rem;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: $silver;
+            display: flex;
+            justify-content: center;
+        }
+        // Middle Layout //
+        .content-layout-middle-row{
             display: flex;
             gap: .5vw;
             width: 68vw;
         }
         .content-left{
-            width: 33%;
-            background-color: #fff;
-        }
-        .content-center{
-            width: 33%;
+            width: 36%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .card-top{
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 10px;
+                border: 2px solid white;
+                background-color: $silver;
+                height: 58%;
+                .card-info{
+                    border: 2px solid white;
+                    width: 95%;
+                    border-radius: 10px;
+                    margin: 4px;
+                    padding: 7px;
+                }
+            }
+            .card-bottom{
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                border: 2px solid white;
+                background-color: $silver;
+                .card-info{
+                    border: 2px solid white;
+                    border-radius: 10px;
+                    margin: 4px;
+                    padding: 7px;
+                }
+                .tech-card{
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .chart{
+                        width: 50%;
+            
+                }
+            }
+            
+            .card-title{
+                text-align: center;
+                font-size: 1.3rem;
+                padding: 10px;
+            }
+            .react-hex{
+                background-color: #7cc5d9;
+            }
+            .scss-hex{
+                background-color: #cc6699;
+            }
+            .google-hex{
+                background-color: #0F9D58;
+            }
         }
             .animated-image{
                 width: 100%;
                 height: auto;
                 border-radius: 10px;
                 border: 2px solid white;
+                opacity: .75;
             }
         .content-right{
-            width: 33%;
-            background-color: #fff;
+            width: 63%;
+            background-color: $silver;
+            border: 2px solid white;
+            border-radius: 10px;
         }
         // Bottom Layout //
-        .content-layout-bottom{
+        .content-layout-bottom-row{
             display: flex;
             justify-content: space-between;
             gap: .5vw;
@@ -384,5 +467,7 @@ body{
             width: 100%;
             background-color: #fff;
         }
+    }
+    .chart{
     }
 }

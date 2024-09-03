@@ -3,7 +3,9 @@ import { easeIn, useAnimate } from 'framer-motion'
 
 import ProjectCard1 from '../components/ProjectCard1'
 import ProjectCard2 from '../components/ProjectCard2'
+import DoughnutChart from '../components/doughnutChart'
 
+import travelGif from '../assets/images/travelGif.gif'
 import travelThumb from "../assets/images/travel-info-thumb.jpg"
 import holidayPhotoThumb from "../assets/images/holiday-photo-thumb.png"
 import {data }from "../assets/data/projects"
@@ -16,6 +18,17 @@ const Projects = () => {
 
   //Animations//
   const [scope, animate ] = useAnimate()
+
+  const chartData = {
+    datasets: [{
+      data: [60, 30, 10],
+      backgroundColor: [
+        '#7cc5d9',
+        '#cc6699',
+        '#0F9D58'
+      ],
+    }]
+  };
 
   const handleAnimate = async (id) => {
   //  await animate("#project-content", {x: "30vw"}, {duration: 1})
@@ -31,35 +44,78 @@ const Projects = () => {
       </h1>
       <div className="main-content">
         <section id="animated-content" className="animated-content">
-          <div className="animated-content-title">
-              <h1>Travel Maps App</h1>
-          </div>
+
+          
           <div className="animated-project-content">
-            <div className="content-layout-top">
-              <div className="content-left">
+            <div className="content-layout-top-row">
+              <div className="content-top-left">
+                <p className="about-box">
+                  "An App designed to help find local restaurants
+                  and other amenities. You can check ratings, add 
+                  your own and other features"
+                </p>
               </div>
-              <div className="content-center">
-                <div className="animated-image-card">
-                  <img className="animated-image" src={travelThumb} alt="" />
-                </div>
-                <div className="animated-about-card">
-                  <p>
-                  An App designed to help find local restaurants and 
-                  other amenities. You can check ratings, add your own
-                  and other features
+              <div className="content-top-right">
+                <h1 className="animated-content-title">Travel Maps App</h1>
+              </div>
+            </div>
+            <div className="content-layout-middle-row">
+              <div className="content-left">
+                <div className="card-top">
+                  <h3 className="card-title">
+                    Functionality
+                  </h3>
+                  <p className="card-info">
+                    Displays all local Restaurants in your area
                   </p>
+                  <p className="card-info">
+                    Search for Restaurants in a certain area
+                  </p>
+                  <p className="card-info">
+                    Show clear information on google ratings, website, location etc.
+                  </p>
+                  <p className="card-info">
+                    Accurate map on Restaurant and Hotel locations
+                  </p>
+                </div>
+                <div className="card-bottom">
+                  <h3 className="card-title">
+                    Technologies
+                  </h3>
+                  <div className="tech-card">
+                    <div className="techs">
+                    <p className="card-info react-hex">
+                    React / Javascript
+                    </p>
+                    <p className="card-info google-hex">
+                      Google Maps Api
+                    </p>
+                    <p className="card-info scss-hex">
+                      Scss
+                    </p>
+                  </div>
+                  
+                  <div className="chart">
+                    <DoughnutChart data={chartData}/>
+                  </div>
+                  </div>
+                  
+                  
                 </div>
               </div>
               <div className="content-right">
+                <div className="animated-image-card">
+                  <img className="animated-image" src={travelGif} alt="" />
+                </div>
               </div>
             </div>
-            <div className="content-layout-bottom">
+            <div className="content-layout-bottom-row">
               <div className="content-bottom-left">
                 <button>Project</button>
               </div>
-              <div className="content-bottom-right">
+              {/* <div className="content-bottom-right">
                 <button>Code</button>
-              </div>
+              </div> */}
             </div>
             
           </div>
