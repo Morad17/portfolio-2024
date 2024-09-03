@@ -35,16 +35,33 @@ const Projects = () => {
               <h1>Travel Maps App</h1>
           </div>
           <div className="animated-project-content">
-            <div className="content-left">
-
-            <div className="animated-card">
-              <img className="animated-image" src={travelThumb} alt="" />
+            <div className="content-layout-top">
+              <div className="content-left">
+              </div>
+              <div className="content-center">
+                <div className="animated-image-card">
+                  <img className="animated-image" src={travelThumb} alt="" />
+                </div>
+                <div className="animated-about-card">
+                  <p>
+                  An App designed to help find local restaurants and 
+                  other amenities. You can check ratings, add your own
+                  and other features
+                  </p>
+                </div>
+              </div>
+              <div className="content-right">
+              </div>
             </div>
-
+            <div className="content-layout-bottom">
+              <div className="content-bottom-left">
+                <button>Project</button>
+              </div>
+              <div className="content-bottom-right">
+                <button>Code</button>
+              </div>
             </div>
-            <div className="content-right">
-
-            </div>
+            
           </div>
           
         </section>
