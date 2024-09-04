@@ -111,11 +111,13 @@ const Projects = () => {
             </div>
             <div className="content-layout-bottom-row">
               <div className="content-bottom-left">
-                <button>Project</button>
+                <p>Live Preview</p>
+                <button className="project-button">Click Here</button>
               </div>
-              {/* <div className="content-bottom-right">
-                <button>Code</button>
-              </div> */}
+              <div className="content-bottom-right">
+                <p>Project Code</p>
+                <button className="project-button">Click Here</button>
+              </div>
             </div>
             
           </div>
