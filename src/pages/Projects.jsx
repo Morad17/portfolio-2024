@@ -14,7 +14,7 @@ import {data }from "../assets/data/projects"
 
 const Projects = () => {
 
-  const [animateOn, turnAnimateOn ] = useState(true)
+  const [animateOn, turnAnimateOn ] = useState(false)
 
   //Animations//
   const [scope, animate ] = useAnimate()
@@ -31,9 +31,17 @@ const Projects = () => {
   };
 
   const handleAnimate = async (id) => {
-  //  await animate("#project-content", {x: "30vw"}, {duration: 1})
-   await animate("#animated-content", {"margin-left":0},{duration: 1}, )
-   await animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
+    if (!animateOn) {
+       //  await animate("#project-content", {x: "30vw"}, {duration: 1})
+      await animate("#animated-content", {"margin-left":0},{duration: 1}, )
+      await animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
+      turnAnimateOn(true)
+    } else {
+      await animate("#animated-content", {"margin-left":"-50vw"},{duration: .5}, )
+      await animate("#animated-content",{opacity: 0}, {duration: .5}, {ease: "linear"})
+      turnAnimateOn(false)
+    }
+ 
   }
   
 
