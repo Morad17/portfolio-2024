@@ -6,7 +6,7 @@ const doughnutChart = ({data}) => {
 
   return (
     <Doughnut 
-    data = {data} width="100px"
+      data = {data} width="100px"
     />
   )
 }

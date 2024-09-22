@@ -338,17 +338,19 @@ body{
         color: $darkFont;
         .animated-project-content{
             row-gap: 2vw;
-            gap: 1vh;
+            gap: 1vw;
             display: flex;
             flex-direction: column;
         }
         //Card Layouts //
-
+        .content-layout-top-row, .content-layout-middle-row,
+        .content-layout-bottom-row{
+            width: 60vw;
+            gap: 1vw;
+        }
         //Top Layout //
         .content-layout-top-row{
             display: flex;
-            gap: .5vw;
-            width: 68vw;
         }
         .content-top-left{
             width: 50%;
@@ -376,8 +378,6 @@ body{
         // Middle Layout //
         .content-layout-middle-row{
             display: flex;
-            gap: .5vw;
-            width: 68vw;
         }
         .content-left{
             width: 36%;
@@ -385,7 +385,7 @@ body{
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            gap: .5vw;
+            gap: 1vw;
             .card-top{
                 display: flex;
                 justify-content: space-around;
@@ -457,8 +457,6 @@ body{
         .content-layout-bottom-row{
             display: flex;
             justify-content: space-between;
-            gap: .5vw;
-            width: 68vw;
         }
         .content-bottom-left{
             width: 100%;
