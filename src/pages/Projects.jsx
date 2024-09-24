@@ -15,9 +15,17 @@ import {data }from "../assets/data/projects"
 const Projects = () => {
 
   const [animateOn, turnAnimateOn ] = useState(false)
+  const [projectData, setProjectData ] = useState([])
 
   //Animations//
   const [scope, animate ] = useAnimate()
+
+  const pieColorKey = {
+    "react":"#7cc5d9",
+    "google-maps-api":"#cc6699",
+    "scss":"#0F9D58",
+    "firebase":"#FFC400"
+  }
 
   const chartData = {
     datasets: [{
@@ -31,7 +39,18 @@ const Projects = () => {
   };
 
   const handleAnimate = async (id) => {
+    const setAnimationInfo = (id) => {
+      const info = []
+      data.filter((obj)=> {
+        if(obj.id === id){
+          info.push(obj)
+        }
+      }) 
+      console.log(info)
+    }
+
     if (!animateOn) {
+      setAnimationInfo(id)
        //  await animate("#project-content", {x: "30vw"}, {duration: 1})
       await animate("#animated-content", {"margin-left":0},{duration: 1}, )
       await animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
@@ -134,7 +153,7 @@ const Projects = () => {
         <section id="project-content" className="project-content">
           <div className="project-slides">
             <div id="project-1" className="project-1 project-card">
-              <a onClick={() => handleAnimate("project-1")}>
+              <a onClick={() => handleAnimate(1)}>
                 <img src={travelThumb} alt="" className="project-image"/>
                 <div className="card-overlay">
                   <div className="project-text">
@@ -145,7 +164,7 @@ const Projects = () => {
               </a>
             </div>
             <div id="project-2" className="project-2 project-card">
-              <a onClick={() => handleAnimate("project-2")}>
+              <a onClick={() => handleAnimate(2)}>
                 <img src={holidayPhotoThumb} alt="" className="project-image"/>
                 <div className="card-overlay">
                   <div className="project-text">
@@ -156,7 +175,7 @@ const Projects = () => {
               </a>
             </div>
             <div id="project-3" className="project-3 project-card">
-              <a onClick={() => handleAnimate("project-3")}>
+              <a onClick={() => handleAnimate(2)}>
                 <img src={holidayPhotoThumb} alt="" className="project-image"/>
                 <div className="card-overlay">
                   <div className="project-text">
