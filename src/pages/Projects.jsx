@@ -15,7 +15,10 @@ import {data }from "../assets/data/projects"
 const Projects = () => {
 
   const [animateOn, turnAnimateOn ] = useState(false)
-  const [projectData, setProjectData ] = useState([])
+  const [projectData, setProjectData ] = useState(null)
+  const [techs, setTechs] = useState([])
+  const [fPoints, setFPoints] = useState([])
+  const [dataNumbers,setDataNumbers] = useState([])
 
   //Animations//
   const [scope, animate ] = useAnimate()
@@ -28,8 +31,9 @@ const Projects = () => {
   }
 
   const chartData = {
+    fPoints,
     datasets: [{
-      data: [60, 30, 10],
+      data: dataNumbers,
       backgroundColor: [
         '#7cc5d9',
         '#cc6699',
@@ -38,26 +42,26 @@ const Projects = () => {
     }]
   };
 
-  const handleAnimate = async (id) => {
-    const setAnimationInfo = (id) => {
+  const handleAnimate = (id) => {
+
       const info = []
       data.filter((obj)=> {
         if(obj.id === id){
-          info.push(obj)
+          setProjectData(obj)
+          setTechs(obj.techs[0])
+          setFPoints(obj.funcitonalityPoints)
         }
-      }) 
-      console.log(info)
-    }
-
+      })
+     
+      console.log(techs, fPoints, dataNumbers)
     if (!animateOn) {
-      setAnimationInfo(id)
        //  await animate("#project-content", {x: "30vw"}, {duration: 1})
-      await animate("#animated-content", {"margin-left":0},{duration: 1}, )
-      await animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
+      animate("#animated-content", {"margin-left":0},{duration: 1}, )
+      animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
       turnAnimateOn(true)
     } else {
-      await animate("#animated-content", {"margin-left":"-50vw"},{duration: .5}, )
-      await animate("#animated-content",{opacity: 0}, {duration: .5}, {ease: "linear"})
+      animate("#animated-content", {"margin-left":"-50vw"},{duration: .5}, )
+      animate("#animated-content",{opacity: 0}, {duration: .5}, {ease: "linear"})
       turnAnimateOn(false)
     }
  
@@ -70,20 +74,20 @@ const Projects = () => {
         Projects
       </h1>
       <div className="main-content">
+    
         <section id="animated-content" className="animated-content">
-
-          
           <div className="animated-project-content">
-            <div className="content-layout-top-row">
+            { projectData && 
+
+              <>
+              <div className="content-layout-top-row">
               <div className="content-top-left">
                 <p className="about-box">
-                  "An App designed to help find local restaurants
-                  and other amenities. You can check ratings, add 
-                  your own and other features"
+                 {projectData.about}
                 </p>
               </div>
               <div className="content-top-right">
-                <h1 className="animated-content-title">Travel Maps App</h1>
+                <h1 className="animated-content-title">{projectData.title}</h1>
               </div>
             </div>
             <div className="content-layout-middle-row">
@@ -92,18 +96,14 @@ const Projects = () => {
                   <h3 className="card-title">
                     Functionality
                   </h3>
-                  <p className="card-info">
-                    Displays all local Restaurants in your area
-                  </p>
-                  <p className="card-info">
-                    Search for Restaurants in a certain area
-                  </p>
-                  <p className="card-info">
-                    Show clear information on google ratings, website, location etc.
-                  </p>
-                  <p className="card-info">
-                    Accurate map on Restaurant and Hotel locations
-                  </p>
+                  {
+                    fPoints.map((p, index)=> {
+                      return(
+                      <p className="card-info" key={index}>
+                        {p}
+                      </p>)
+                    })
+                  }
                 </div>
                 <div className="card-bottom">
                   <h3 className="card-title">
@@ -111,28 +111,26 @@ const Projects = () => {
                   </h3>
                   <div className="tech-card">
                     <div className="techs">
-                    <p className="card-info react-hex">
-                    React / Javascript
-                    </p>
-                    <p className="card-info google-hex">
-                      Google Maps Api
-                    </p>
-                    <p className="card-info scss-hex">
-                      Scss
-                    </p>
-                  </div>
-                  
+                       {
+                        Object.keys(techs).map((t, index) => {
+                          return(
+                            <p className="card-info">
+                            {t}
+                          </p>
+                          )
+                       
+                      })
+                    }
+                    </div>
                   <div className="chart">
                     <DoughnutChart data={chartData}/>
                   </div>
                   </div>
-                  
-                  
                 </div>
               </div>
               <div className="content-right">
                 <div className="animated-image-card">
-                  <img className="animated-image" src={travelGif} alt="" />
+                  <img className="animated-image" src={projectData.image} alt="" />
                 </div>
               </div>
             </div>
@@ -146,9 +144,10 @@ const Projects = () => {
                 <button className="project-button">Click Here</button>
               </div>
             </div>
+              </>
             
+            }
           </div>
-          
         </section>
         <section id="project-content" className="project-content">
           <div className="project-slides">

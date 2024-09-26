@@ -2,6 +2,7 @@ export const data = [
     {   
         "id":1,
         "title": "Travel Adviser Guide",
+        "about":  "An App designed to help find local restaurants and other amenities. You can check ratings, add your own and other features",
         "image": "images/travel-info-thumb.jpg",
         "techs":[{
             "react": 60,
@@ -22,6 +23,7 @@ export const data = [
     {
         "id":2,
         "title": "Holiday Photo Gallery",
+        "about":  "An App designed to help find local restaurants and other amenities. You can check ratings, add your own and other features",
         "image": "images/holiday-photo-thumb.png",
         "techs":[{
             "react": 66,
