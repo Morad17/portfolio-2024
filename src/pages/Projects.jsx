@@ -29,31 +29,21 @@ const Projects = () => {
     "scss":"#0F9D58",
     "firebase":"#FFC400"
   }
-
-  const chartData = {
-    fPoints,
-    datasets: [{
-      data: dataNumbers,
-      backgroundColor: [
-        '#7cc5d9',
-        '#cc6699',
-        '#0F9D58'
-      ],
-    }]
-  };
-
   const handleAnimate = (id) => {
 
       const info = []
       data.filter((obj)=> {
         if(obj.id === id){
+          //Get Specific Projects Data //
           setProjectData(obj)
-          setTechs(obj.techs[0])
           setFPoints(obj.funcitonalityPoints)
+          const techKeys = obj.techs[0]
+          const techs = Object.keys(obj.techs)
+          setTechs(techKeys)
         }
       })
      
-      console.log(techs, fPoints, dataNumbers)
+      console.log(techs, fPoints,)
     if (!animateOn) {
        //  await animate("#project-content", {x: "30vw"}, {duration: 1})
       animate("#animated-content", {"margin-left":0},{duration: 1}, )
@@ -65,6 +55,16 @@ const Projects = () => {
       turnAnimateOn(false)
     }
  
+  }
+
+  const returnTechs = () => {
+    const map = new Map()
+    map.set(techs)
+      return(
+        <p className="card-info">
+        {map.key + map.value}
+      </p>
+      )
   }
   
 
@@ -111,20 +111,9 @@ const Projects = () => {
                   </h3>
                   <div className="tech-card">
                     <div className="techs">
-                       {
-                        Object.keys(techs).map((t, index) => {
-                          return(
-                            <p className="card-info">
-                            {t}
-                          </p>
-                          )
-                       
-                      })
+                       { returnTechs()
                     }
                     </div>
-                  <div className="chart">
-                    <DoughnutChart data={chartData}/>
-                  </div>
                   </div>
                 </div>
               </div>
