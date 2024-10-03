@@ -58,13 +58,15 @@ const Projects = () => {
   }
 
   const returnTechs = () => {
-    const map = new Map()
-    map.set(techs)
-      return(
-        <p className="card-info">
-        {map.key + map.value}
-      </p>
-      )
+    var map = techs
+    // map.set(techs)
+    console.log(map);
+    
+      for (let key in map){
+          <p className="card-info">
+          {key + map[key]}
+          </p>
+      }
   }
   
 
