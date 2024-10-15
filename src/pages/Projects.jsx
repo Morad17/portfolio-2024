@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { easeIn, useAnimate } from 'framer-motion'
+import { easeIn, useAnimate, motion } from 'framer-motion'
 
 import ProjectCard1 from '../components/ProjectCard1'
 import ProjectCard2 from '../components/ProjectCard2'
@@ -16,7 +16,7 @@ const Projects = () => {
 
   const [animateOn, turnAnimateOn ] = useState(false)
   const [projectData, setProjectData ] = useState(null)
-  const [techs, setTechs] = useState([])
+  const [techs, setTechs] = useState(null)
   const [fPoints, setFPoints] = useState([])
   const [dataNumbers,setDataNumbers] = useState([])
 
@@ -37,9 +37,8 @@ const Projects = () => {
           //Get Specific Projects Data //
           setProjectData(obj)
           setFPoints(obj.funcitonalityPoints)
-          const techKeys = obj.techs[0]
-          const techs = Object.keys(obj.techs)
-          setTechs(techKeys)
+          const allTechs = obj.techs
+          setTechs(allTechs)
         }
       })
      
@@ -58,15 +57,7 @@ const Projects = () => {
   }
 
   const returnTechs = () => {
-    var map = techs
-    // map.set(techs)
-    console.log(map);
     
-      for (let key in map){
-          <p className="card-info">
-          {key + map[key]}
-          </p>
-      }
   }
   
 
@@ -113,8 +104,14 @@ const Projects = () => {
                   </h3>
                   <div className="tech-card">
                     <div className="techs">
-                       { returnTechs()
-                    }
+                       { techs.map((t, index)=>{
+                        return <div className="tech-progress-bar">
+                          <motion.div className="tech-progress"
+                          animate={{width: Object.values(t), background: "red"}}
+                          transition={{duration: 0.5}}
+                          >{Object.keys(t) + Object.values(t)}</motion.div>
+                          </div>
+                        })}
                     </div>
                   </div>
                 </div>

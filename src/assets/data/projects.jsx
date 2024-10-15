@@ -4,11 +4,10 @@ export const data = [
         "title": "Travel Adviser Guide",
         "about":  "An App designed to help find local restaurants and other amenities. You can check ratings, add your own and other features",
         "image": "images/travel-info-thumb.jpg",
-        "techs":[{
-            "react": 60,
-            "google-maps-api":10,
-            "scss": 30
-        },],
+        "techs":[
+            {"react": 60},
+            {"google-maps-api":10},
+            {"scss": 30},],
         "featured": true,
         "funcitonalityPoints": [
             "Displays all local Restaurants in your area",
