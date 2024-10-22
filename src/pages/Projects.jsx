@@ -51,6 +51,7 @@ const Projects = () => {
     } else {
       animate("#animated-content", {"margin-left":"-50vw"},{duration: .5}, )
       animate("#animated-content",{opacity: 0}, {duration: .5}, {ease: "linear"})
+      // animate("#tech-progress",{opacity: 1}, {duration: 5}, {ease: "linear"})
       turnAnimateOn(false)
     }
  
@@ -106,11 +107,14 @@ const Projects = () => {
                     <div className="techs">
                        { techs.map((t, index)=>{
                         return <div className="tech-progress-bar">
-                          <motion.div className="tech-progress"
-                          animate={{width: Object.values(t), background: "red"}}
-                          transition={{duration: 0.5}}
-                          >{Object.keys(t) + Object.values(t)}</motion.div>
-                          </div>
+                                {/* <motion.div className="tech-progress" id="tech-progress"
+                                  initial={{width:0}}
+                                  animate={{ width:`${Object.values(t)}%`,duration: .5, ease: "linear"}}
+                                  >
+                                    {Object.keys(t)}
+                                  </motion.div> */}
+                                  <div className="tech-progress">backgeo</div>
+                                </div>
                         })}
                     </div>
                   </div>
