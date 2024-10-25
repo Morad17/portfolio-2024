@@ -23,7 +23,7 @@ const Projects = () => {
   //Animations//
   const [scope, animate ] = useAnimate()
 
-  const pieColorKey = {
+  const colorKey = {
     "react":"#7cc5d9",
     "google-maps-api":"#cc6699",
     "scss":"#0F9D58",
@@ -42,15 +42,15 @@ const Projects = () => {
         }
       })
      
-      console.log(techs, fPoints,)
+      // console.log(techs, fPoints,)
     if (!animateOn) {
        //  await animate("#project-content", {x: "30vw"}, {duration: 1})
       animate("#animated-content", {"margin-left":0},{duration: 1}, )
-      animate("#animated-content",{opacity: 1}, {duration: 1}, {ease: "linear"})
+      animate("#animated-content",{opacity: 1}, {duration: 1})
       turnAnimateOn(true)
     } else {
       animate("#animated-content", {"margin-left":"-50vw"},{duration: .5}, )
-      animate("#animated-content",{opacity: 0}, {duration: .5}, {ease: "linear"})
+      animate("#animated-content",{opacity: 0}, {duration: .5})
       
       turnAnimateOn(false)
     }
@@ -99,42 +99,59 @@ const Projects = () => {
                     })
                   }
                 </div>
-                <div className="card-bottom">
+                <div className="card-bottom-left">
                   <h3 className="card-title">
                     Technologies
                   </h3>
-                  <div className="tech-card">
-                    <div className="techs">
+                  <div className="tech-key-card">
                        { techs.map((t, index)=>{
-                        return <div className="tech-progress-bar">
-                                <motion.div className="tech-progress" id="tech-progress"
-                                  initial={{width:0}}
-                                  animate={{ width:`${Object.values(t)}%`,duration: 2.5, ease: "linear"}}
-                                  >
-                                    {Object.keys(t)}
+                        const color = Object.keys(t)
+                        const hexColor = colorKey[color]
+                        return <div key={index} className="tech">
+                                <p>{Object.keys(t)}</p>
+                                <motion.div  className="tech-key"
+                                  initial={{backgroundColor:hexColor}}
+                                >
                                 </motion.div>
                                 </div>
                         })}
-                    </div>
                   </div>
                 </div>
               </div>
               <div className="content-right">
+                {/* Project Image */}
                 <div className="animated-image-card">
                   <img className="animated-image" src={projectData.image} alt="" />
                 </div>
+                <div className="tech-bar-card">
+                  <div className="tech-bar-background">
+                     {
+                      techs.map((t, index)=> {
+                        const color = Object.keys(t)
+                        const hexColor = colorKey[color]
+                       return <motion.div className="tech-bar" key={index}
+                          initial={{width:0, backgroundColor: hexColor}}
+                          animate={{ width:`${Object.values(t)}%`,duration: 2.5}}>
+                        </motion.div>
+                      })
+                    }
+                  </div>
+                 
+                </div>
+                {/* Layout Links */}
+                <div className="content-layout-links">
+                  <div className="content-live-preview">
+                    <p>Live Preview</p>
+                    <button className="project-button">Click Here</button>
+                  </div>
+                  <div className="content-project-code">
+                    <p>Project Code</p>
+                    <button className="project-button">Click Here</button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="content-layout-bottom-row">
-              <div className="content-bottom-left">
-                <p>Live Preview</p>
-                <button className="project-button">Click Here</button>
-              </div>
-              <div className="content-bottom-right">
-                <p>Project Code</p>
-                <button className="project-button">Click Here</button>
-              </div>
-            </div>
+            
               </>
             
             }

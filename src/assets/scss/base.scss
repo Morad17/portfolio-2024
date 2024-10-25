@@ -397,16 +397,19 @@ body{
                 border-radius: 10px;
                 border: 2px solid white;
                 background-color: $silver;
-                height: 58%;
                 .card-info{
                     border: 2px solid white;
                     width: 95%;
                     border-radius: 10px;
                     margin: 4px;
                     padding: 7px;
+                    font-size: 19px;
+                    margin-top: 10px;
+                    font-weight: bold;
+
                 }
             }
-            .card-bottom{
+            .card-bottom-left{
                 display: flex;
                 flex-direction: column;
                 border-radius: 10px;
@@ -418,30 +421,24 @@ body{
                     margin: 4px;
                     padding: 7px;
                 }
-                .tech-card{
+                .tech-key-card{
                     display: flex;
-                    justify-content: space-between;
+                    flex-direction: column;
+                    height: 100%;
+                    min-height: 200px;
                 }
-                .chart{
-                        width: 50%;
-            
+                .tech{
+                    display: flex;
+                    font-size:30px;
+                    padding: 10px;
                 }
             }
-            
             .card-title{
                 text-align: center;
                 font-size: 1.3rem;
                 padding: 10px;
             }
-            .react-hex{
-                background-color: #7cc5d9;
-            }
-            .scss-hex{
-                background-color: #cc6699;
-            }
-            .google-hex{
-                background-color: #0F9D58;
-            }
+            
         }
             .animated-image{
                 width: 100%;
@@ -452,61 +449,59 @@ body{
             }
         .content-right{
             width: 63%;
-            background-color: $silver;
-            border: 2px solid white;
-            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1vw;
         }
         // Bottom Layout //
-        .content-layout-bottom-row{
+        .content-layout-links{
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
+            gap: 1vw
         }
-        .content-bottom-left{
-            width: 100%;
+        .content-live-preview,
+        .content-project-code{
             border: 2px solid white;
             border-radius: 10px;
             background-color: $silver;
             display: flex;
             justify-content: space-around;
-            font-size: 35px;
+            font-size: 30px;
             align-items: center;
-            padding: 10px;     
+            padding: 10px;
+            width: 100%;     
         }
-        .content-bottom-right{
-            width: 100%;
-            border: 2px solid white;
-            border-radius: 10px;
-            background-color: $silver;
-            display: flex;
-            justify-content: space-around;
-            font-size: 35px;
-            align-items: center;
-            padding: 10px; 
-        }
-    }
-    .chart{
     }
     .project-button{
         padding: 10px 20px;
         border-radius: 15px;
         cursor: pointer;
-        font-size: 24px;
+        font-size: 20px;
     }
-    .tech-progress{
-        width: 50%;
-        background-color: gray;
+    .tech-key{
+        padding: 20px;
+        width: 50px;
+    }
+
+    //Tech Bar //
+    .tech-bar-card{
+        width: 100%;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 10px;
+        background-color: $silver;
         height: 100%;
-        text-align: end;
         align-content: center;
-        font-size: 19px;
+        .tech-bar-background{
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+        }
+        .tech-bar{
+            height: 100%;
+        }
     }
-    .tech-progress-bar{
-        margin: 10px 0;
-       width: 100%;
-       width: 200px;
-       height: 50px;
-       background-color: white;
-       border-radius: 10px;
-       border: 2px solid $turquoise;
-    }
+    
 }
