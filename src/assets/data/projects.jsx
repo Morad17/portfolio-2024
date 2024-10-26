@@ -24,11 +24,11 @@ export const data = [
         "title": "Holiday Photo Gallery",
         "about":  "An App designed to help find local restaurants and other amenities. You can check ratings, add your own and other features",
         "image": "images/holiday-photo-thumb.png",
-        "techs":[{
-            "react": 66,
-            "firebase":19,
-            "scss": 15
-        }],
+        "techs":[
+            {"react": 66},
+            {"firebase":19},
+            {"scss": 15}
+        ],
         "featured": false,
         "funcitonalityPoints": [
             "Create/Read/Update/Delete Travel Photos",

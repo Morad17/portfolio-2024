@@ -113,12 +113,20 @@ const Projects = () => {
                   </h3>
                   <div className="tech-key-card">
                        { techs.map((t, index)=>{
-                        const color = Object.keys(t)
-                        const hexColor = colorKey[color]
+                          const color = Object.keys(t)
+                          const hexColor = colorKey[color]
+                        const variants = {
+                          inactive: {backgroundColor: "transparent"},
+                          active: {
+                            backgroundColor:hexColor
+                          }
+                        }
+                      
                         return <div key={index} className="tech">
                                 <p>{Object.keys(t)}</p>
                                 <motion.div  className="tech-key"
-                                  initial={{backgroundColor:hexColor}}
+                                variants={variants}
+                                animate={animateOn ? "active": "inactive"}
                                 >
                                 </motion.div>
                                 </div>
@@ -137,10 +145,10 @@ const Projects = () => {
                           const color = Object.keys(t)
                           const hexColor = colorKey[color]
                             const variants = {
-                            active: {
+                            inactive: {
                               width:0, transition:{type: "easeOut",duration:2},
                             },
-                            inactive: {
+                            active: {
                               width:`${Object.values(t)}%`,
                               transition:{type: "easeIn",duration:2},
                               backgroundColor: hexColor
@@ -151,7 +159,7 @@ const Projects = () => {
                           
                          return <motion.div className="tech-bar" 
                           variants={variants} 
-                          animate={ animateOn? "inactive" :"active"}
+                          animate={ animateOn? "active" :"inactive"}
                          >
                           </motion.div>
                         })
