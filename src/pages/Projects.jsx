@@ -57,9 +57,17 @@ const Projects = () => {
  
   }
 
-  const returnTechs = () => {
+  // const returnTechs = () => {
     
-  }
+  //                     // techs.map((t, index)=> {
+  //                     //   const color = Object.keys(t)
+  //                     //   const hexColor = colorKey[color]
+  //                     //  return <motion.div className="tech-bar" key={index}
+  //                     //     initial={{width:0, backgroundColor: hexColor}}
+  //                     //     animate={{ width:`${Object.values(t)}%`,duration: 2.5}}>
+  //                     //   </motion.div>
+  //                     // })
+  // }
   
 
   return (
@@ -125,15 +133,28 @@ const Projects = () => {
                 </div>
                 <div className="tech-bar-card">
                   <div className="tech-bar-background">
-                     {
-                      techs.map((t, index)=> {
-                        const color = Object.keys(t)
-                        const hexColor = colorKey[color]
-                       return <motion.div className="tech-bar" key={index}
-                          initial={{width:0, backgroundColor: hexColor}}
-                          animate={{ width:`${Object.values(t)}%`,duration: 2.5}}>
-                        </motion.div>
-                      })
+                     {techs.map((t, index)=> {
+                          const color = Object.keys(t)
+                          const hexColor = colorKey[color]
+                            const variants = {
+                            active: {
+                              width:0, transition:{type: "easeOut",duration:2},
+                            },
+                            inactive: {
+                              width:`${Object.values(t)}%`,
+                              transition:{type: "easeIn",duration:2},
+                              backgroundColor: hexColor
+                            
+                            },
+                    
+                          }
+                          
+                         return <motion.div className="tech-bar" 
+                          variants={variants} 
+                          animate={ animateOn? "inactive" :"active"}
+                         >
+                          </motion.div>
+                        })
                     }
                   </div>
                  
