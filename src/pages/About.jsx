@@ -29,13 +29,15 @@ const About = () => {
       </div>
       <div className="tech-row">
         <img className="tech-logo"src={react} alt="" />
-      <img className="tech-logo"src={firebase} alt="" />
-      <img className="tech-logo"src={python} alt="" />
-      <img className="tech-logo"src={django} alt="" />
-      <img className="tech-logo"src={mern} alt="" />
-      <img className="tech-logo"src={mysql} alt="" />
+        <img className="tech-logo"src={firebase} alt="" />
+        <img className="tech-logo"src={python} alt="" />
+        <img className="tech-logo"src={django} alt="" />
+        <img className="tech-logo"src={mysql} alt="" />
       </div>
       
+      <div className="">
+        
+      </div>
     </div>
   )
 }

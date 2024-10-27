@@ -1,9 +1,13 @@
+import travelGif from '../../assets/images/travelGif.gif'
+
 export const data = [
+
+    
     {   
         "id":1,
         "title": "Travel Adviser Guide",
         "about":  "An App designed to help find local restaurants and other amenities. You can check ratings, add your own and other features",
-        "image": "images/travel-info-thumb.jpg",
+        "image": "images/travel-info.jpg",
         "techs":[
             {"react": 60},
             {"google-maps-api":10},
@@ -15,7 +19,7 @@ export const data = [
             "Show clear information on google ratings, website, location etc.",
             "Accurate map on Restaurant and Hotel locations"
         ],
-        "animationGif": "images/travelGif.gif",
+        "animationGif": travelGif,
         "codeLink":"https://github.com/Morad17/react-travel-info",
         "previewLink":"https://react-travel-adviser-project.netlify.app/"
     },

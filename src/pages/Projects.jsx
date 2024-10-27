@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { easeIn, useAnimate, motion } from 'framer-motion'
 
 import ProjectCard1 from '../components/ProjectCard1'
-import ProjectCard2 from '../components/ProjectCard2'
 import DoughnutChart from '../components/doughnutChart'
 
 import travelGif from '../assets/images/travelGif.gif'
-import travelThumb from "../assets/images/travel-info-thumb.jpg"
+import travelInfo from "../assets/images/travel-info.jpg"
 import holidayPhotoThumb from "../assets/images/holiday-photo-thumb.png"
 import {data }from "../assets/data/projects"
 
@@ -137,7 +136,7 @@ const Projects = () => {
               <div className="content-right">
                 {/* Project Image */}
                 <div className="animated-image-card">
-                  <img className="animated-image" src={projectData.image} alt="" />
+                  <img className="animated-image" src={projectData. animationGif} alt="" />
                 </div>
                 <div className="tech-bar-card">
                   <div className="tech-bar-background">
@@ -190,7 +189,7 @@ const Projects = () => {
           <div className="project-slides">
             <div id="project-1" className="project-1 project-card">
               <a onClick={() => handleAnimate(1)}>
-                <img src={travelThumb} alt="" className="project-image"/>
+                <img src={travelInfo} alt="" className="project-image"/>
                 <div className="card-overlay">
                   <div className="project-text">
                     <h3>Travel Adviser Guide</h3>

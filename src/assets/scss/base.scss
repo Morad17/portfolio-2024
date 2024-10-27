@@ -258,8 +258,9 @@ body{
         border-radius: 5px;
         width: 15vw;
         padding: 10px;
-        background: #2f2f2f;
-        color: white;
+        border-radius: 10px;
+        border: 2px solid white;
+        background-color: $silver;
         margin-bottom: 5vh;
         text-align: center;
         .e-title{
@@ -447,6 +448,7 @@ body{
                 border-radius: 10px;
                 border: 2px solid white;
                 opacity: .75;
+                min-width: 100%;
             }
         .content-right{
             width: 63%;
