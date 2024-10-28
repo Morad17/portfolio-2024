@@ -35,7 +35,7 @@ const About = () => {
         <img className="tech-logo"src={mysql} alt="" />
       </div>
       
-      <div className="">
+      <div className="3d-animation">
         
       </div>
     </div>
