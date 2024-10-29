@@ -7,21 +7,23 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Skills from './pages/Skills'
 import Contact from './pages/Contact'
+import ThreeTest from './pages/ThreeTest';
 
 
 function App() {
 
   return (
     <div className="App main-layout">
-      <SideNav />
-     <div className="content">
+      {/* <SideNav /> */}
+     {/* <div className="content">
       <Home />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-     </div>
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+     </div> */}
+     <ThreeTest />
     </div>
   );
 }
