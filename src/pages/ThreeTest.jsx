@@ -1,41 +1,34 @@
 import React, { useRef } from 'react';
-import { Canvas } from "@react-three/fiber";
-import { Mesh } from 'three/src/Three.js';
-import { RoundedBox } from '@react-three/drei';
-
-
-export function Box(){
-    return(
-        <mesh>
-            <boxGeometry args={[3,3,3]}/>
-            <meshLambertMaterial />
-        </mesh>
-    )
-}
+import { RoundedBox, ScrollControls, Scroll, Environment } from '@react-three/drei';
+import { GreekModel } from '../components/GreekModel';
+import { Spaceman } from '../components/Spaceman';
 
 const ThreeTest = () => {
 
 
-
   return (
-    <div>
-        <Canvas style={{width:`1000px`, height:'500px',}}>
-            <color attach="background" args={['gray']}/>
-            <ambientLight intensity={0.1} />
-            <directionalLight position={[0, 0, 5]} color="red" />
-            <RoundedBox
-                args={[1, 1, 1]} // Width, height, depth. Default is [1, 1, 1]
-                radius={0.05} // Radius of the rounded corners. Default is 0.05
-                smoothness={4} // The number of curve segments. Default is 4
-                bevelSegments={4} // The number of bevel segments. Default is 4, setting it to 0 removes the bevel, as a result the texture is applied to the whole geometry.
-                creaseAngle={0.4} // Smooth normals everywhere except faces that meet at an angle greater than the crease angle
-                >
-                <meshPhongMaterial color="#f3f3f3" wireframe />
-            </RoundedBox>
-
-
-        </Canvas>
-    </div>
+    <>
+    <color attach="background" args={['gray']}/>
+    <ambientLight intensity={0.1} />
+    <spotLight position={[0,25,0]} angle={1.3} castShadow intensity={2} shadow-bias={-0.0001}/>
+    <Environment
+        preset='warehouse'
+    />
+    <ScrollControls pages={5} damping={0.1}>
+        {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
+        {/* <GreekModel scale={0.5}/> */}
+        <Spaceman />
+        <Scroll>
+            {/* Canvas contents in here will scroll along */}
+        </Scroll>
+        <Scroll html style={{width:'100%'}}>
+            {/* DOM contents in here will scroll along */}
+            <h1>html in here (optional)</h1>
+            <h1 style={{ position:'absolute',top: '100vh' }}>second page</h1>
+            <h1 style={{ position:'absolute',top: '200vh' }}>third page</h1>
+        </Scroll>
+    </ScrollControls>
+    </>
   )
 }
 

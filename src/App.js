@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import Skills from './pages/Skills'
 import Contact from './pages/Contact'
 import ThreeTest from './pages/ThreeTest';
+import { Canvas } from '@react-three/fiber';
 
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
       <Contact />
       <Footer />
      </div> */}
-     <ThreeTest />
+     <Canvas style={{width:'100%', height:'100vh'}}>
+      <ThreeTest />
+     </Canvas>
+     
     </div>
   );
 }
