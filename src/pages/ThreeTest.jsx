@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { RoundedBox, ScrollControls, Scroll, Environment } from '@react-three/drei';
 import { GreekModel } from '../components/GreekModel';
 import { Spaceman } from '../components/Spaceman';
+import About from './About';
 
 const ThreeTest = () => {
 
@@ -14,16 +15,17 @@ const ThreeTest = () => {
     <Environment
         preset='warehouse'
     />
+    <Spaceman position={[0,-2,0]} />
     <ScrollControls pages={5} damping={0.1}>
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         {/* <GreekModel scale={0.5}/> */}
-        <Spaceman />
+        
         <Scroll>
             {/* Canvas contents in here will scroll along */}
         </Scroll>
         <Scroll html style={{width:'100%'}}>
             {/* DOM contents in here will scroll along */}
-            <h1>html in here (optional)</h1>
+            <About />
             <h1 style={{ position:'absolute',top: '100vh' }}>second page</h1>
             <h1 style={{ position:'absolute',top: '200vh' }}>third page</h1>
         </Scroll>

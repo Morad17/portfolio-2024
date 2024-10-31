@@ -19,22 +19,22 @@ export function Spaceman(props) {
   const { nodes, materials } = useGraph(clone)
   const spacemanRef = useRef()
   const scroll = useScroll()
-  const tl = useRef()
 
-  useFrame((state, delta) => {
-    tl.current.seek(scroll.offset * tl.current.duration())
+  useFrame(({clock}) => {
+    spacemanRef.current.rotation.y = clock.getElapsedTime() * .5
   })
 
-  useLayoutEffect()=> {
-    tl.current = 
-  }
+  // useLayoutEffect()=> {
+  //   tl.current = 
+  // }
 
   return (
-    <group {...props} dispose={null} ref={spacemanRef}>
+    <group {...props} dispose={null} ref={spacemanRef} className="spaceman">
       <group name="Sketchfab_Scene">
-        <primitive object={nodes.GLTF_created_0_rootJoint} />
+        <mesh material={materials.Metal}>
+          <primitive object={nodes.GLTF_created_0_rootJoint} />
         <skinnedMesh name="Object_7" geometry={nodes.Object_7.geometry} material={materials['Material.001']} skeleton={nodes.Object_7.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
-        <skinnedMesh name="Object_9" geometry={nodes.Object_9.geometry} material={materials.material_0} skeleton={nodes.Object_9.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
+        <skinnedMesh name="Object_9" geometry={nodes.Object_9.geometry} material={materials.material_0}  skeleton={nodes.Object_9.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
         <skinnedMesh name="Object_11" geometry={nodes.Object_11.geometry} material={materials['Material.001']} skeleton={nodes.Object_11.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
         <skinnedMesh name="Object_13" geometry={nodes.Object_13.geometry} material={materials['Material.001']} skeleton={nodes.Object_13.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
         <skinnedMesh name="Object_15" geometry={nodes.Object_15.geometry} material={materials['Material.001']} skeleton={nodes.Object_15.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
@@ -44,7 +44,10 @@ export function Spaceman(props) {
         <skinnedMesh name="Object_23" geometry={nodes.Object_23.geometry} material={materials.material_0} skeleton={nodes.Object_23.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
         <skinnedMesh name="Object_25" geometry={nodes.Object_25.geometry} material={materials.material_0} skeleton={nodes.Object_25.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
         <skinnedMesh name="Object_27" geometry={nodes.Object_27.geometry} material={materials.Material} skeleton={nodes.Object_27.skeleton} position={[0, -1.084, 0]} rotation={[0, Math.PI / 2, 0]} />
+      </mesh>
       </group>
+        
+        
     </group>
   )
 }
