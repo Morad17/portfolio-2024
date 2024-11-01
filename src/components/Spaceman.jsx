@@ -20,9 +20,9 @@ export function Spaceman(props) {
   const spacemanRef = useRef()
   const scroll = useScroll()
 
-  useFrame(({clock}) => {
-    spacemanRef.current.rotation.y = clock.getElapsedTime() * .5
-  })
+  // useFrame(({clock}) => {
+  //   spacemanRef.current.rotation.y = clock.getElapsedTime() * .5
+  // })
 
   // useLayoutEffect()=> {
   //   tl.current = 

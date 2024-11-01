@@ -15,16 +15,18 @@ const ThreeTest = () => {
     <Environment
         preset='warehouse'
     />
-    <Spaceman position={[0,-2,0]} />
+    
     <ScrollControls pages={5} damping={0.1}>
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         {/* <GreekModel scale={0.5}/> */}
-        
-        <Scroll>
+        <Spaceman position={[0,-2,0]} />
+        <Scroll style={{width:'100%', zIndex: '111'}}>
             {/* Canvas contents in here will scroll along */}
+          
         </Scroll>
-        <Scroll html style={{width:'100%'}}>
+        <Scroll html style={{width:'100%', zIndex: '-111'}} occlude="true">
             {/* DOM contents in here will scroll along */}
+            
             <About />
             <h1 style={{ position:'absolute',top: '100vh' }}>second page</h1>
             <h1 style={{ position:'absolute',top: '200vh' }}>third page</h1>

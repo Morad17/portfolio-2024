@@ -165,6 +165,7 @@ body{
     background-color: $gray;
     color: white;
     padding: 10vh 20vw;
+    z-index: -1111;
     .profile-image{
         width: 300px;
         border-radius: 50%;
