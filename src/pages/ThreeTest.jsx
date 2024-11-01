@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
+import { OrbitControls } from '@react-three/drei';
 import { RoundedBox, ScrollControls, Scroll, Environment } from '@react-three/drei';
 import { GreekModel } from '../components/GreekModel';
 import { Spaceman } from '../components/Spaceman';
 import About from './About';
+import { VikingShip } from '../components/Viking_ship';
 
 const ThreeTest = () => {
 
@@ -19,7 +21,8 @@ const ThreeTest = () => {
     <ScrollControls pages={5} damping={0.1}>
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         {/* <GreekModel scale={0.5}/> */}
-        <Spaceman position={[0,-2,0]} />
+        {/* <Spaceman position={[0,-1,0]} /> */}
+        <VikingShip scale={0.2} rotation={[0,1.5,0]} position={[2,-1,2]}/>
         <Scroll style={{width:'100%', zIndex: '111'}}>
             {/* Canvas contents in here will scroll along */}
           
