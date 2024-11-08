@@ -17,7 +17,7 @@ export function VikingShip(props) {
   return (
    
     <group {...props} dispose={null}> 
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <mesh geometry={nodes.ship_sail1_0.geometry} material={materials.sail1} scale={0.008} />
       <mesh geometry={nodes.ship_shields_0.geometry} material={materials.shields} scale={0.008} />
       <mesh geometry={nodes.ship_trimsheet_0.geometry} material={materials.trimsheet} scale={0.008} />
