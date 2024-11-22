@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { OrbitControls } from '@react-three/drei';
+import { Html, OrbitControls } from '@react-three/drei';
 import { RoundedBox, ScrollControls, Scroll, Environment } from '@react-three/drei';
 import { GreekModel } from '../components/GreekModel';
 import { Spaceman } from '../components/Spaceman';
@@ -17,21 +17,23 @@ const ThreeTest = () => {
     <Environment
         preset='warehouse'
     />
-    
+    <VikingShip scale={0.2} rotation={[0,2,0]} position={[2,-1,2]}/>
     <ScrollControls pages={5} damping={0.1}>
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         {/* <GreekModel scale={0.5}/> */}
-        {/* <Spaceman position={[0,-1,0]} /> */}
+        {/* <Spaceman position={[0,-1,0]} /> */} 
+        <Html occlude="blending" style={{width:"100%"}}>
+          <About/>
+        </Html>
         
-        <VikingShip scale={0.2} rotation={[0,1.5,0]} position={[2,-1,2]}/>
+        
+       
         <Scroll style={{width:'100%', zIndex: '111'}}>
             {/* Canvas contents in here will scroll along */}
           
         </Scroll>
         <Scroll html style={{width:'100%', zIndex: '-111'}} occlude="true">
             {/* DOM contents in here will scroll along */}
-            
-            <About />
             <h1 style={{ position:'absolute',top: '100vh' }}>second page</h1>
             <h1 style={{ position:'absolute',top: '200vh' }}>third page</h1>
         </Scroll>
