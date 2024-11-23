@@ -22,8 +22,13 @@ const ThreeTest = () => {
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         {/* <GreekModel scale={0.5}/> */}
         {/* <Spaceman position={[0,-1,0]} /> */} 
-        <Html occlude="blending" style={{width:"100%"}}>
+        <Html  >
           <About/>
+          <div className="box">
+            <h1>About Work</h1>
+          <h1>Abu</h1>
+          </div>
+          
         </Html>
         
         

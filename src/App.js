@@ -27,6 +27,7 @@ function App() {
      <Canvas style={{width:'100%', height:'100vh'}}>
       <ThreeTest />
      </Canvas>
+     {/* <About /> */}
      
     </div>
   );

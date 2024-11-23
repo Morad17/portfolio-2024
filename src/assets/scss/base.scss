@@ -160,14 +160,17 @@ body{
 
 .about-section{
     min-height: 50vh;
-    width: 40vw;
+    width: 100vw;
     border: 5px solid $gold;
     background-color: $gray;
     color: white;
     padding: 10vh 20vw;
-    z-index: -1111;
+    position: relative;
+    .text-section{
+        position: relative;
+    }
     .profile-image{
-        width: 100px;
+        width: 200px;
         height: 100px;
         border-radius: 50%;
         border: 5px solid $gold;
@@ -178,7 +181,7 @@ body{
         border: 2px solid $gold;
         margin:10px ;
     }
-    .about-row{
+    .about-me-row{
         display: flex;
         flex-direction: row;
     }
@@ -197,6 +200,13 @@ body{
     .tech-row{
         display: flex;
         justify-content: center;
+        z-index: -1;
+    }
+    .three-animation{
+        width: 100vw;
+        height: 100vh;
+        z-index: 111;
+        position: absolute;
     }
 }
 

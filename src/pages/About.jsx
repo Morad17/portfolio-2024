@@ -7,12 +7,14 @@ import python from "../assets/icons/python.png"
 import django from "../assets/icons/django.png"
 import mern from "../assets/icons/mern.png"
 import mysql from "../assets/icons/mysql.png"
+import { Canvas } from '@react-three/fiber'
+import { VikingShip } from '../components/Viking_ship'
 
 const About = () => {
   return (
     <div className="about-section" id="about">
-      
-      <div className="about-row">
+      <div className="text-section">
+         <div className="about-me-row">
         <div className="section-1">
           <h1 className="about-title">About Me</h1>
           <p className="about-text">
@@ -27,16 +29,24 @@ const About = () => {
         
         
       </div>
-      <div className="tech-row">
-        <img className="tech-logo"src={react} alt="" />
-        <img className="tech-logo"src={firebase} alt="" />
-        <img className="tech-logo"src={python} alt="" />
-        <img className="tech-logo"src={django} alt="" />
-        <img className="tech-logo"src={mysql} alt="" />
+        <div className="tech-row">
+          <img className="tech-logo"src={react} alt="" />
+          <img className="tech-logo"src={firebase} alt="" />
+          <img className="tech-logo"src={python} alt="" />
+          <img className="tech-logo"src={django} alt="" />
+          <img className="tech-logo"src={mysql} alt="" />
+        </div>
       </div>
+     
       
-      <div className="3d-animation">
-        
+      <div className="three-animation">
+        <Canvas style={{width:'100%', height:'100%'}}>
+          
+        <ambientLight intensity={1} />
+        {/* <spotLight position={[0,25,0]} angle={1.3} castShadow intensity={5} shadow-bias={-0.0001}/> */}
+         
+         <VikingShip scale={0.18} rotation={[0,2,0]} position={[1,0,3]}/>
+        </Canvas>
       </div>
     </div>
   )
